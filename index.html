@@ -5,48 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>семестр</title>
     <link rel="icon" href="../src/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style/styles.css">
 </head>
 <body>
     <header>
         <div class = "header">Хэдер</div>
         <div id="menu">
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="pages/news.html">Новости</a></li>
-            <li><a href="pages/practices.html">Практики</a></li>
-            <li><a href="pages/goods.html">Товары</a></li>
-            <li><a href="pages/contacts.html">Контакты</a></li>
-        </ul>
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+            </ul>
         </div>
     </header>
     
     <main>
         <div id="content">
             <p>Информация об авторе</p>
-            <img src="images/profile.jpeg" alt="Фото автора" width="200" height="250">
+            <img src="images/profile.jpeg" alt="Фото автора" class="photoIndex" width="200" height="250">
             <p class="nameIndex">Брюханова Софья</p>
             <p class = "groupIndex">ЭФБО-02-24</p>
             <p>Обо мне: Я родился в Москве в 70-м на краю города. Глупость рано
             ударила в голову. В четыре активно ругался.
             Потом школа, форма, драки, клей. Так я становился сильней. Воровал деньги в
             раздевалке.</p>
-            <div>Навык 1</div>
-            <div>Навык 2</div>
-            <div>Навык 3</div>
-            <div>Навык 4</div>
-            <div>
-                Мой опыт работы:
-                <div>
-                Опыт 1<br>
-                Работал фантазёром. Сочинял и праздновал.
-                </div>
-                <div>
-                Опыт 2<br>
-                Работал воровством. Воровал и продавал.
-                </div>
-                <div>
-                Опыт 3<br>
-                Работал рэпером. Читал и пел.
+            <div class="skills-container">
+                <div class="skillIndex">Навык 1</div>
+                <div class="skillIndex">Навык 2</div>
+                <div class="skillIndex">Навык 3</div>
+                <div class="skillIndex">Навык 4</div>
+            </div>
+            
+            <div class="expSecIndex">
+                <h2 class="section-title">Мой опыт работы</h2>
+                    <div class="experience-card">
+                        <h3 class="experience-title">Опыт 1</h3>
+                        <p class="experience-desc">Работал фантазёром. Сочинял и праздновал.</p>
+                    </div>
+                    <div class="experience-card">
+                        <h3 class="experience-title">Опыт 2</h3>
+                        <p class="experience-desc">Работал воровством. Воровал и продавал.</p>
+                    </div>
+                    <div class="experience-card">
+                        <h3 class="experience-title">Опыт 3</h3>
+                        <p class="experience-desc">Работал рэпером. Читал и пел.</p>
                 </div>
             </div>
         </div>
