@@ -1,51 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice</title>
+    <title>Practice - Контакты</title>
     <link rel="icon" href="../src/assets/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <header>
-        <div class = "header">
-            <div id="menu">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./practices.html">Практики</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./contacts.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-        
+    <div class="theme-toggle">
+        <button class="theme-toggle__btn" id="themeToggle" aria-label="Переключить тему">🌓</button>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="./contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <div class="contacts-content">
-            <div class="experience-card">
-                <h3 class="experience-title">Почта</h3>
-                <p class="experience-desc">sss777@mail.com</p>
+        <div class="page-container">
+            <div class="contacts__content">
+                <h2 class="section__title">Контакты</h2>
+                
+                <div class="contacts__grid">
+                    <div class="card card--contact" tabindex="0">
+                        <h3 class="card__title">Почта</h3>
+                        <p class="contacts__info">sss777@mail.com</p>
+                    </div>
+                    
+                    <div class="card card--contact" tabindex="0">
+                        <h3 class="card__title">Телефон</h3>
+                        <p class="contacts__info">+7 (777) 777-77-77</p>
+                    </div>
+                    
+                    <div class="card card--contact" tabindex="0">
+                        <h3 class="card__title">GitHub</h3>
+                        <p class="contacts__info">sonyabrk</p>
+                    </div>
+                    
+                    <div class="card card--contact" tabindex="0">
+                        <h3 class="card__title">Время работы</h3>
+                        <p class="contacts__info">Пн-Пт: 12:57-14:07</p>
+                    </div>
+                </div>
+                
+                <button class="btn" onclick="contactModal.showModal()">Связаться с нами</button>
             </div>
-            <div class="experience-card">
-                <h3 class="experience-title">Телефон</h3>
-                <p class="experience-desc">+7 (777) 777-77-77</p>
-            </div>
-            <div class="experience-card">
-                <h3 class="experience-title">GitHub</h3>
-                <p class="experience-desc">sonyabrk</p>
-            </div>
-            <button class="btnContacts">позвони мне</button>
+
+            <dialog class="modal" id="contactModal">
+                <div class="modal__header">
+                    <h2>Форма обратной связи</h2>
+                </div>
+
+                <div class="modal__content">
+                    <form id="feedbackForm" method="dialog">
+                        <div class="form-group">
+                            <label class="form-group__label" for="name">
+                                Имя <span class="form-group__required">*</span>
+                            </label>
+                            <input class="form-group__input" type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-group__label" for="phone">
+                                Телефон <span class="form-group__required">*</span>
+                            </label>
+                            <input class="form-group__input" type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-group__label" for="email">
+                                Электронная почта <span class="form-group__required">*</span>
+                            </label>
+                            <input class="form-group__input" type="email" id="email" name="email" required placeholder="example@mail.ru">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-group__label" for="category">
+                                Категория обращения <span class="form-group__required">*</span>
+                            </label>
+                            <select class="form-group__select" id="category" name="category" required>
+                                <option value="">Выберите категорию</option>
+                                <option value="technical">Техническая поддержка</option>
+                                <option value="commercial">Коммерческое предложение</option>
+                                <option value="cooperation">Сотрудничество</option>
+                                <option value="complaint">Жалоба</option>
+                                <option value="suggestion">Предложение</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-group__label" for="message">
+                                Текст обращения <span class="form-group__required">*</span>
+                            </label>
+                            <textarea class="form-group__textarea" id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                        </div>
+                        
+                        <div class="modal__actions">
+                            <button type="button" class="btn btn--secondary" onclick="contactModal.close()">Отмена</button>
+                            <button type="button" class="btn btn--primary" onclick="submitForm()">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
         </div>
     </main>
 
-     <footer>
+    <footer class="footer">
         <p>&copy; 2025 Practice. Все права защищены.</p>
         <p>Телефон: +7 (777) 777-77-77</p>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        function submitForm() {
+            const form = document.getElementById('feedbackForm');
+            const formData = new FormData(form);
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+       
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                category: formData.get('category'),
+                message: formData.get('message')
+            };
+
+            console.log('Данные формы:', data);
+            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+            contactModal.close();
+            form.reset();
+        }
+        
+        document.getElementById('contactModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                this.close();
+            }
+        });
+
+        document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && event.target.type !== 'textarea') {
+                event.preventDefault();
+            }
+        });
+
+        document.querySelectorAll('.card--contact').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('card--selected');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,36 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice</title>
+    <title>Practice - Практики</title>
     <link rel="icon" href="../src/assets/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <header>
-        <div class = "header">
-            <div id="menu">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./practices.html">Практики</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./contacts.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="theme-toggle">
+        <button class="theme-toggle__btn" id="themeToggle" aria-label="Переключить тему">🌓</button>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="./practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="content">
-
-    </div>
+    <main>
+        <div class="page-container">
+            <div class="content">
+                <h2 class="section__title">Практика</h2>
+                
+                <div class="practices__grid">
+                    <div class="card card--practice" tabindex="0">
+                        <h3 class="card__title">Практика первая: </h3>
+                        <p class="card__desc">
+                            Написать биты для оуджи буды и платины, чтобы результат был оценен на 11/10 (результат определить по количеству сказанных междометий).
+                        </p>
+                        <div class="card__status card__status--completed">Завершено</div>
+                    </div>
+                    
+                    <div class="card card--practice" tabindex="0">
+                        <h3 class="card__title">Практика вторая: </h3>
+                        <p class="card__desc">
+                            Паркур с Джейсоном Стетхемом по крышам Лос-Анджелоса. Опционально заехать в Лас-Вегас и выиграть в казино 1.000.000$. Так же стоит сняться в боевике (за бесплатно).
+                        </p>
+                        <div class="card__status card__status--in-progress">В процессе</div>
+                    </div>
+                    
+                    <div class="card card--practice" tabindex="0">
+                        <h3 class="card__title">Практика третья:</h3>
+                        <p class="card__desc">
+                            Повторить мем "Мам вызывай такси!!!!!!!!!!!!" (в роли мамы должна выступать Анджелина Джоли, уговорить ее сниматься за чай с медом).
+                        </p>
+                        <div class="card__status card__status--pending">Ожидает</div>
+                    </div>
+                </div>
+                
+                <div class="practices__info">
+                    <div class="card">
+                        <h3 class="card__title">Информация о практиках</h3>
+                        <p class="card__desc">
+                            В этом разделе представлены все практические задания, которые необходимо выполнить.
+                            Статус выполнения отображается цветными индикаторами.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 Practice. Все права защищены.</p>
         <p>Телефон: +7 (777) 777-77-77</p>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        document.querySelectorAll('.card--practice').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('card--selected');
+            });
+            
+            card.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.classList.toggle('card--selected');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

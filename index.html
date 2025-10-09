@@ -1,66 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice</title>
+    <title>Practice - Главная</title>
     <link rel="icon" href="../src/assets/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./style/styles.css">
 </head>
 <body>
-    <header>
-        <div class = "header">
-            <div id="menu">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="./index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./pages/news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./pages/practices.html">Практики</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./pages/goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./pages/contacts.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="theme-toggle">
+        <button class="theme-toggle__btn" id="themeToggle" aria-label="Переключить тему">🌓</button>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="./index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./pages/news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./pages/practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./pages/goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./pages/contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     
     <main>
-        <div id="content">
-            <p>Информация об авторе</p>
-            <img src="images/profile.jpeg" alt="Фото автора" class="photoIndex" width="200" height="250">
-            <p class="nameIndex">Брюханова Софья</p>
-            <p class = "groupIndex">ЭФБО-02-24</p>
-            <p>Я выросла в спальном районе, где трава была зеленее только у детской площадки. 
-                Гениальность моя прорвалась рано — в три года я собрал пазл «для пяти лет», проглотив один элемент.
-                Потом школа, универ. Так я познавала боль. Крал инструменты у прораба, чтобы купить ситро. Однажды сдал цветмет и купил модные штаны. Это был пик.</p>
-            <div class="skills-container">
-                <div class="skillIndex">Рэп</div>
-                <div class="skillIndex">Брейкданс</div>
-                <div class="skillIndex">Биты</div>
-                <div class="skillIndex">Паркур</div>
-            </div>
-            
-            <div class="expSecIndex">
-                <h2 class="section-title">Мой опыт работы</h2>
-                    <div class="experience-card">
-                        <h3 class="experience-title">Опыт брейкданса:</h3>
-                        <p class="experience-desc">Работала танцором. Танцевала танцы.</p>
+        <div class="page-container">
+            <div class="content">
+                <p>Информация об авторе</p>
+                <img src="images/profile.jpeg" alt="Фото автора" class="content__photo" width="200" height="250">
+                <p class="content__name">Брюханова Софья</p>
+                <p class="content__group">ЭФБО-02-24</p>
+                <p>Я выросла в спальном районе, где трава была зеленее только у детской площадки. 
+                    Гениальность моя прорвалась рано — в три года я собрал пазл «для пяти лет», проглотив один элемент.
+                    Потом школа, универ. Так я познавала боль. Крал инструменты у прораба, чтобы купить ситро. Однажды сдал цветмет и купил модные штаны. Это был пик.</p>
+                
+                <div class="skills">
+                    <h2 class="section__title">Мои навыки</h2>
+                    <div class="skills__container">
+                        <div class="skill" tabindex="0">Рэп</div>
+                        <div class="skill" tabindex="0">Брейкданс</div>
+                        <div class="skill" tabindex="0">Биты</div>
+                        <div class="skill" tabindex="0">Паркур</div>
                     </div>
-                    <div class="experience-card">
-                        <h3 class="experience-title">Опыт рэперства:</h3>
-                        <p class="experience-desc">Работала рэпером. Рэпую и буду рэповать.</p>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section__title">Мой опыт работы</h2>
+                    <div class="card">
+                        <h3 class="card__title">Опыт брейкданса:</h3>
+                        <p class="card__desc">Работала танцором. Танцевала танцы.</p>
                     </div>
-                    <div class="experience-card">
-                        <h3 class="experience-title">Опыт паркура: </h3>
-                        <p class="experience-desc">Паркур любой сложности. Паркурила и буду паркурить.</p>
+                    <div class="card">
+                        <h3 class="card__title">Опыт рэперства:</h3>
+                        <p class="card__desc">Работала рэпером. Рэпую и буду рэповать.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Опыт паркура:</h3>
+                        <p class="card__desc">Паркур любой сложности. Паркурила и буду паркурить.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
     
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 Practice. Все права защищены.</p>
         <p>Телефон: +7 (777) 777-77-77</p>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        document.querySelectorAll('.skill').forEach(skill => {
+            skill.addEventListener('click', function() {
+                this.classList.toggle('skill--active');
+            });
+        });
+    </script>
 </body>
 </html>

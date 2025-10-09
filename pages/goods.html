@@ -1,55 +1,93 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice</title>
+    <title>Practice - Товары</title>
     <link rel="icon" href="../src/assets/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <header>
-        <div class = "header">
-            <div id="menu">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./practices.html">Практики</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./contacts.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="theme-toggle">
+        <button class="theme-toggle__btn" id="themeToggle" aria-label="Переключить тему">🌓</button>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="./goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <div class="content">
-            <div class="product-card">
-                <img src="../images/goods1.jpeg" class="firstGood">
-                <p class="nameGood">мантра 1</p>
-                <p class="priceGood">бесконечно $$$</p>
-            </div>
+        <div class="page-container">
+            <div class="goods">
+                <div class="product-card" tabindex="0">
+                    <img src="../images/goods1.jpeg" class="product-card__image">
+                    <p class="product-card__name">мантра 1</p>
+                    <p class="product-card__price">бесконечно $$$</p>
+                </div>
 
-            <div class="product-card">
-                <img src="../images/goods2.jpeg" class="firstGood">
-                <p class="nameGood">мантра 2</p>
-                <p class="priceGood">бесконечно $$$</p>
-            </div>
+                <div class="product-card product-card--selected" tabindex="0">
+                    <img src="../images/goods2.jpeg" class="product-card__image">
+                    <p class="product-card__name">мантра 2</p>
+                    <p class="product-card__price">
+                        <span class="product-card__price--old">бесконечно $$$</span>
+                        больше, чем бесконечно $$$
+                    </p>
+                </div>
 
-            <div class="product-card">
-                <img src="../images/goods3.jpeg" class="firstGood">
-                <p class="nameGood">мантра 3</p>
-                <p class="priceGood">бесконечно $$$</p>
+                <div class="product-card product-card--discount" tabindex="0">
+                    <img src="../images/goods3.jpeg" class="product-card__image">
+                    <p class="product-card__name">мантра 3</p>
+                    <p class="product-card__price">
+                        <span class="product-card__price--old">бесконечно $$$</span>
+                        больше, чем бесконечно $$$
+                    </p>
+                </div>
             </div>
-            
         </div>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 Practice. Все права защищены.</p>
         <p>Телефон: +7 (777) 777-77-77</p>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('product-card--selected');
+            });
+        });
+    </script>
 </body>
 </html>
