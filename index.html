@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,80 +7,191 @@
     <title>Practice - Главная</title>
     <link rel="icon" href="../src/assets/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./style/styles.css">
 </head>
-<body>
-    <div class="theme-toggle">
-        <button class="theme-toggle__btn" id="themeToggle" aria-label="Переключить тему">🌓</button>
+<body class="bg-light">
+    <div class="position-fixed top-0 end-0 m-3 z-3">
+        <button class="btn btn-outline-secondary" id="themeToggle" aria-label="Переключить тему">🌓</button>
     </div>
 
-    <header class="header">
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a class="nav__link nav__link--active" href="./index.html">Главная</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="./pages/news.html">Новости</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="./pages/practices.html">Практики</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="./pages/goods.html">Товары</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="./pages/contacts.html">Контакты</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <div class="page-container">
-            <div class="content">
-                <p>Информация об авторе</p>
-                <img src="images/profile.jpeg" alt="Фото автора" class="content__photo" width="200" height="250">
-                <p class="content__name">Брюханова Софья</p>
-                <p class="content__group">ЭФБО-02-24</p>
-                <p>Я выросла в спальном районе, где трава была зеленее только у детской площадки. 
-                    Гениальность моя прорвалась рано — в три года я собрал пазл «для пяти лет», проглотив один элемент.
-                    Потом школа, универ. Так я познавала боль. Крал инструменты у прораба, чтобы купить ситро. Однажды сдал цветмет и купил модные штаны. Это был пик.</p>
-                
-                <div class="skills">
-                    <h2 class="section__title">Мои навыки</h2>
-                    <div class="skills__container">
-                        <div class="skill" tabindex="0">Рэп</div>
-                        <div class="skill" tabindex="0">Брейкданс</div>
-                        <div class="skill" tabindex="0">Биты</div>
-                        <div class="skill" tabindex="0">Паркур</div>
-                    </div>
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h1 class="h3 mb-1">Портфолио</h1>
+                    <p class="mb-0 opacity-75">Софья Брюханова</p>
                 </div>
-                
-                <div class="section">
-                    <h2 class="section__title">Мой опыт работы</h2>
-                    <div class="card">
-                        <h3 class="card__title">Опыт брейкданса:</h3>
-                        <p class="card__desc">Работала танцором. Танцевала танцы.</p>
-                    </div>
-                    <div class="card">
-                        <h3 class="card__title">Опыт рэперства:</h3>
-                        <p class="card__desc">Работала рэпером. Рэпую и буду рэповать.</p>
-                    </div>
-                    <div class="card">
-                        <h3 class="card__title">Опыт паркура:</h3>
-                        <p class="card__desc">Паркур любой сложности. Паркурила и буду паркурить.</p>
-                    </div>
+                <div class="col-auto">
+                    <span class="badge bg-light text-primary">ЭФБО-02-24</span>
                 </div>
             </div>
         </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">
+                            <i class="bi bi-house me-1"></i>Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/news.html">
+                            <i class="bi bi-newspaper me-1"></i>Новости
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/practices.html">
+                            <i class="bi bi-code-slash me-1"></i>Практики
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/goods.html">
+                            <i class="bi bi-cart me-1"></i>Товары
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/contacts.html">
+                            <i class="bi bi-telephone me-1"></i>Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4">
+        <section class="mb-5">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 text-center mb-3 mb-md-0">
+                            <img src="images/profile.jpeg" alt="Фото автора" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                        </div>
+                        <div class="col-md-9">
+                            <h2 class="card-title h4 text-primary">Брюханова Софья</h2>
+                            <p class="card-text text-muted mb-2">
+                                <i class="bi bi-bookmark-check-fill text-primary"></i>
+                                Студент группы ЭФБО-02-24
+                            </p>
+                            <p class="card-text">
+                                Факультет информационных технологий, специальность "Веб-разработка"
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-primary">Рэп</span>
+                                <span class="badge bg-success">Брейкданс</span>
+                                <span class="badge bg-info">Биты</span>
+                                <span class="badge bg-warning">Паркур</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h3 class="card-title h5 mb-0">
+                        <i class="bi bi-person-circle text-primary"></i>
+                        Обо мне
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Я выросла в спальном районе, где трава была зеленее только у детской площадки. 
+                        Гениальность моя прорвалась рано — в три года я собрала пазл «для пяти лет», проглотив один элемент.
+                        Потом школа, универ. Так я познавала боль. Крала инструменты у прораба, чтобы купить ситро. Однажды сдала цветмет и купила модные штаны. Это был пик.
+                    </p>
+                    <p class="card-text">
+                        Мои основные интересы: фронтенд разработка, UX/UI дизайн и мобильная разработка.
+                        Стремлюсь к созданию качественных и удобных пользовательских интерфейсов.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="mb-5">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h3 class="card-title h5 mb-0">
+                        <i class="bi bi-tools text-primary"></i>
+                        Мои навыки
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2" id="skillsContainer">
+                        <button class="btn btn-outline-primary skill-btn" type="button">Рэп</button>
+                        <button class="btn btn-outline-primary skill-btn" type="button">Брейкданс</button>
+                        <button class="btn btn-outline-primary skill-btn" type="button">Биты</button>
+                        <button class="btn btn-outline-primary skill-btn" type="button">Паркур</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h3 class="card-title h5 mb-0">
+                        <i class="bi bi-briefcase text-primary"></i>
+                        Мой опыт работы
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Опыт брейкданса</h5>
+                                    <p class="card-text">Работала танцором. Танцевала танцы.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Опыт рэперства</h5>
+                                    <p class="card-text">Работала рэпером. Рэпую и буду рэповать.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Опыт паркура</h5>
+                                    <p class="card-text">Паркур любой сложности. Паркурила и буду паркурить.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    
-    <footer class="footer">
-        <p>&copy; 2025 Practice. Все права защищены.</p>
-        <p>Телефон: +7 (777) 777-77-77</p>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Practice. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Телефон: +7 (777) 777-77-77</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const themeToggle = document.getElementById('themeToggle');
         const currentTheme = localStorage.getItem('theme') || 'light';
@@ -92,9 +204,10 @@
             localStorage.setItem('theme', newTheme);
         });
 
-        document.querySelectorAll('.skill').forEach(skill => {
+        document.querySelectorAll('.skill-btn').forEach(skill => {
             skill.addEventListener('click', function() {
-                this.classList.toggle('skill--active');
+                this.classList.toggle('btn-primary');
+                this.classList.toggle('btn-outline-primary');
             });
         });
     </script>
